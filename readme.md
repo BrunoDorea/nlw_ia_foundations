@@ -2,7 +2,7 @@
 
 [![wakatime](https://wakatime.com/badge/user/68660678-6b86-4b78-98df-f5f41a37e1bc/project/c9f49a8b-cc97-438c-984b-bbcda2835a6a.svg)](https://wakatime.com/badge/user/68660678-6b86-4b78-98df-f5f41a37e1bc/project/c9f49a8b-cc97-438c-984b-bbcda2835a6a)
 
-[![Vercel](https://img.shields.io/static/v1?style=for-the-badge&message=Vercel&color=000000&logo=Vercel&logoColor=FFFFFF&label=)](#)
+[![Vercel](https://img.shields.io/static/v1?style=for-the-badge&message=Vercel&color=000000&logo=Vercel&logoColor=FFFFFF&label=)](https://nlw-ia-foundations.vercel.app/)
 
 ## 💼 Sobre o projeto
 
