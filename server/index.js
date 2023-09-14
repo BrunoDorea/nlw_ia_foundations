@@ -1,14 +1,37 @@
-import cors from "cors";
-import express from "express";
+import cors from "cors"
+import express from "express"
 
-import { download } from "./download.js";
+import { convert } from "./convert.js"
+import { download } from "./download.js"
+import { transcribe } from "./transcribe.js"
+import { summarize } from "./summarize.js"
 
-const app = express();
-app.use(cors());
+const app = express()
 
-app.get('/summary/:id', (request, response) => {
-    download(request.params.id)
-    response.json({ result: 'Download do vídeo realizado com sucesso!'})
+app.use(express.json())
+app.use(cors())
+
+app.get('/summary/:id', async (request, response) => {
+    try {
+        await download(request.params.id)
+        const audioConverted = await convert()
+        const result = await transcribe(audioConverted)
+
+        return response.json({ result })
+    } catch(error) {
+        console.log(error)
+        return response.json({ error })
+    }
+})
+
+app.post('/summary', async (request, response) => {
+    try {
+        const result = await summarize(request.body.text)
+        return response.json({ result })
+    } catch(error) {
+        console.log(error)
+        return response.json({ error })
+    }
 })
 
 app.listen(3334, () => console.log("Server is running http://localhost:3334/"))
